@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+
+<HBox alignment="CENTER" spacing="50.0" xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emsi.Maven.JDBC.controller.RestaurantListController">
+
+    <VBox alignment="CENTER" spacing="20" styleClass="blackBG">
+        <Label text="Username:" fx:id="usernameLabel" styleClass="whiteLB" />
+        <HBox spacing="20">
+            <Button text="Create" onAction="#createRestaurant" prefWidth="100" />
+            <Button text="Read" onAction="#readRestaurant" prefWidth="100" />
+            <Button text="Update" onAction="#updateRestaurant" prefWidth="100" />
+            <Button text="Delete" onAction="#deleteRestaurant" prefWidth="100" />
+            <Button text="Export" onAction="#exportData" prefWidth="100" />
+            <Button text="Import" onAction="#importData" prefWidth="100" />
+        </HBox>
+        <TableView fx:id="restaurantTableView" styleClass="darkTB">
+            <columns>
+                <TableColumn text="Patente" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="patente" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Nom" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nom" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Adresse" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="adresse" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Ville" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="ville" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="CA" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="ca" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Gérant" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="gerant" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Heure Ouverture" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="heureOuverture" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Heure Fermeture" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="heureFermeture" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Type" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </VBox>
+</HBox>
